@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container, Box, List, Button, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Typography } from '@mui/material';
 import CartCard from '../components/cartCard';
+import Heading from '../components/heading';
 
 export default function Cart() {
   const [open, setOpen] = React.useState(false);
@@ -18,18 +19,12 @@ export default function Cart() {
   const styles = {
     button: {
       marginLeft: 'auto'
-    },
-    header: {
-      margin: '40px 10px 5px'
     }
   }
   
   return (
     <Container>
-      <Box style={styles.header}>
-        <Typography variant="h4" >Cart</Typography>
-        <Typography variant="subtitle" >Items you've previously added</Typography>
-      </Box>
+      <Heading heading="Cart" subheading="You recently added to the cart" />
       <List>
         {cartData.map(item => {
           return <CartCard/>
