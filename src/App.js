@@ -1,12 +1,24 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/navbar';
+import Index from './pages/index';
+import Login from './pages/signIn';
+import SignUp from './pages/signUp';
+import Footer from './components/footer';
+import Cart from './pages/cart';
 
 function App() {
   return (
-    <div className="App">
+    <BrowserRouter>
       <Navbar/>
-    </div>
+      <Routes>
+        <Route path="/" element={<Index/>} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<SignUp />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   );
 }
 
